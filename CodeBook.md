@@ -11,7 +11,8 @@ The function has 2 optional arguments. The download parameter
 defaults to FALSE. The outfile argument defaults to
 "./summary_dataset.txt".
 
-If download is set to TRUE, then the script begins by downloading and unzipping the file from the remote URL. It
+If download is set to TRUE, then the script begins by downloading 
+the file from the remote URL. It
 names the local file and folder to store the data in. Any
 pre-existing copies are deleted.
 

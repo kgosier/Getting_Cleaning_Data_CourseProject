@@ -13,6 +13,7 @@ workspace.
 This file should be run as:
 
 source("run_analysis.R")
+summary.dataset <- run_analysis()
 
 This script takes care of all steps in the assignment. Depending on the
 valule of the "download" parameter, it can download and unzip the wearable
