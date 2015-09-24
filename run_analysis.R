@@ -15,15 +15,15 @@ run_analysis <- function(download = FALSE,
             file.remove(localfile)
         }
         download.file(fileurl, localfile)
-
-        #unzip to a local archive. delete any existing local archive
-        #previously unzipped here
-
-        if (file.exists(local.archive)) {
-            unlink(local.archive, recursive = TRUE)
-        }
-        unzip(localfile)
     }
+
+    #unzip to a local archive. delete any existing local archive
+    #previously unzipped here
+
+    if (file.exists(local.archive)) {
+        unlink(local.archive, recursive = TRUE)
+    }
+    unzip(localfile)
 
     #read activity labels. data frame will contain int's in the first
     #column, and the labels as a factor variable in the 2nd column
@@ -55,14 +55,17 @@ run_analysis <- function(download = FALSE,
         subj.list <- read.table(subj.list.file)
         subj.list <- subj.list$V1
 
-        #activity list for the dataset. save as vector of factors
+        #activity list for the dataset. save as vector of factors. last line
+        #works because codes are 1:6. would need to use match() command
+        #for fully general solution
 
         act.list.file <- sprintf("%s/%s/y_%s.txt", local.archive,
             type, type)
         act.list.int <- read.table(act.list.file)
         act.list.factor <- act.label$V2[act.list.int$V1]
 
-        #the actual dataset
+        #the actual dataset. read in and add Subject and Activity columns,
+        #and column names
 
         type.dataset.file <- sprintf("%s/%s/X_%s.txt", local.archive,
             type, type)
