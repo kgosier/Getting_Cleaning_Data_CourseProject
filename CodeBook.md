@@ -1,6 +1,6 @@
-## Ken Gosier
-## Code Book, Getting and Cleaning Data, Course Project, Coursera
-## Sep 2015
+Ken Gosier
+Code Book, Getting and Cleaning Data, Course Project, Coursera
+Sep 2015
 
 # Code Book, Wearable Data Project
 
